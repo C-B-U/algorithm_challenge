@@ -1,4 +1,5 @@
 /* BAEKJOON 11576*/
+<<<<<<< HEAD
 /*
 입력1: A미래진법 B정이진법   (2 이상 30 이하)
 입력2: A진법으로 나타낸 숫자의 자리수의 개수 (1 <=  <= 25)
@@ -12,12 +13,15 @@
 * A진법을 10진수로 바꾸기
 * B로 나눠서 나머지 배열에 저장 (몫이 0이 될때까지)
 */
+=======
+>>>>>>> de8b6cbadb35400fcd26540cb706ec2d4f4b68f6
 
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
+<<<<<<< HEAD
 
 
 int main() {
@@ -32,11 +36,26 @@ int main() {
 	}
 	
 	/* A진법을 10진수로 바꾸기 */
+=======
+int main() {
+	int Anotation, Bnotation, m, tmp = 0;
+	scanf("%d %d", &Anotation, &Bnotation);
+	scanf("%d", &m);
+	int* Aarray = (int*)malloc(sizeof(int) * m);
+
+	for (int i = m-1; i >= 0; --i) {
+		scanf("%d", Aarray + i);
+	}
+	
+>>>>>>> de8b6cbadb35400fcd26540cb706ec2d4f4b68f6
 	for (int i = 0; i < m; i++) {
 		tmp += *(Aarray + i) * pow(Anotation, i);
 	}
 
+<<<<<<< HEAD
 	/* 10진수로 바꾼 수를 B진수 값으로 변환 */
+=======
+>>>>>>> de8b6cbadb35400fcd26540cb706ec2d4f4b68f6
 	int ary[100] = { 0 };
 	int i = 0, num = 0, quo = 0;
 	do {
