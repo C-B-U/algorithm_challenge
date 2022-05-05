@@ -1,6 +1,3 @@
-from matplotlib.pyplot import table
-
-
 def solution():
     """ 수열의 i번째까지의 연속된 값들의 합과 수열의 i번째 인덱스에서 나온 값 중 큰 놈을 고르면 됨 """
     n = int(input())
