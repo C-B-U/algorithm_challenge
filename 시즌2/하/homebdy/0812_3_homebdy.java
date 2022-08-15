@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class homebey_3 {
+class homebey_3 {
 
     private static class Location {
         int x, y;
