@@ -12,7 +12,7 @@ int dfs(int cy, int cx) {
     }
     if (visited[cy][cx]) {
         cout << -1;
-        return 0;
+        exit(0);
     }
     int &cache = dp[cy][cx];
     if (cache != -1) {
