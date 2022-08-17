@@ -31,3 +31,4 @@ if stack:
     print(0)
 else:
     print(total)
+    
