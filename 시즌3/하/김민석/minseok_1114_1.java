@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Day1 {
+public class minseok_1114_1 {
     public static void main(String args[]){
         Scanner scan=new Scanner(System.in);
         int MW=scan.nextInt();
