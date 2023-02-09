@@ -13,5 +13,6 @@ int main() {
 		else if (a[0] == ' ') a++;
 	}
 	printf("%d", count);
+	free(a);
 	return 0;
 }
