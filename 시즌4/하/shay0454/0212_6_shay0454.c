@@ -7,6 +7,8 @@ int main() {
 	char* a = (char*)calloc(82, sizeof(char));
 	char* b = (char*)calloc(82, sizeof(char));
 	char* b1 = x, * b2 = y;
+	int count = 0, m = 48, n = 0, nm = 0;
+	char q;
 	scanf("%s", x);
 	scanf("%s", y);
 	if (strlen(b1) < strlen(b2))  b1 = y, b2 = x;
@@ -16,7 +18,7 @@ int main() {
 	for (int i = 0; i < strlen(b2); i++) {
 		b[i] = b2[strlen(b2) - i - 1];
 	}
-	int count = 0,m=48;
+	
 	while (count<strlen(b1)) {
 		a[count] += b[count] - m;
 		if (a[count] > 49) {
@@ -26,7 +28,6 @@ int main() {
 		count++;
 		if (count == strlen(b2)) m = 0;
 	}
-	char q;
 	if (a[strlen(a) - 1] == 1) a[strlen(a) - 1] = '1';
 	else if (a[strlen(a) - 1] == '2') a[strlen(a) - 1] = '0', a[strlen(a)] = '1';
 	for (int i = 0; i < strlen(a) / 2; i++) {
@@ -34,7 +35,7 @@ int main() {
 		a[i] = a[strlen(a) - 1 - i];
 		a[strlen(a) - 1 - i] = q;
 	}
-	int xm = strlen(a),n=0,nm=0;
+	int xm = strlen(a);
 	for (int i = 0; i < xm; i++) {
 		if (a[i] == '0') n++;
 		else if (a[i] == '1') {
