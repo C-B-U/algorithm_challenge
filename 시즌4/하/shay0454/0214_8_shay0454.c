@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+
 int absolute(int, int);
 
 struct taxi {
@@ -19,6 +20,7 @@ int main() {
 		if (taxi[i].distance < taxi[mini].distance) mini = i;
 	}
 	printf("%d %d", taxi[mini].p[0], taxi[mini].p[1]);
+	return 0;
 }
 
 int absolute(int a, int b) {	
