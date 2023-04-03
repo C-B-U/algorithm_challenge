@@ -33,6 +33,6 @@ public class Main {
         System.out.print(result);
 
 
-        br.close(); // 입력 버퍼 닫음
+        br.close(); // 입력 버퍼를 닫음
     }
 }
