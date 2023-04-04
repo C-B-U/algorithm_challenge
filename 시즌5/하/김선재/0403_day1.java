@@ -30,7 +30,7 @@ public class Main {
         long result = Integer.parseInt(c1 + c2) * (long)(Math.pow(10, c3)); // (정수형 변환)(값+값) * 곱
 
 
-        System.out.print(result);
+        System.out.print(result); // 결과값 출력
 
 
         br.close(); // 입력 버퍼 닫아줌
