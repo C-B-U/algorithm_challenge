@@ -23,5 +23,5 @@ int main() {
         house[i][1] = min(house[i - 1][0], house[i - 1][2]) + cost[1]; // i번집 g 칠하는 최소 비용
         house[i][2] = min(house[i - 1][1], house[i - 1][0]) + cost[2]; // i번집 b 칠하는 최소 비용
     }
-    cout << min({ house[N][0], house[N][1], house[N][2] }); // 총 최소 비용 값 구하기
+    cout << min({ house[N][0], house[N][1], house[N][2] }); // 최소 비용의 총 값 구하기
 }
