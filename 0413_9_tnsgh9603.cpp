@@ -18,7 +18,7 @@ int main() {
     sort(v.begin(), v.end());
     int sum = 0;
     for (int i = 0; i < v.size(); ++i) {
-        auto& [from, to, size] = v[i];
+        auto&[to, from, size] = v[i];
         int max_truck = *max_element(arr + from, arr + to);
         int capacity = min(size, c - max_truck);
         for (int j = from; j < to; ++j) {
