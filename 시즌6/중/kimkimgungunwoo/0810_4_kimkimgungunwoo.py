@@ -17,7 +17,7 @@ for i in range(n):
             checkf=1
         if(checkf!=1):
             dlist.append(checkch.lower())
-            index_to_insert = string_array[i][j].index(checkch)  # checkch가 처음 나오는 인덱스
+            index_to_insert = string_array[i][j].index(checkch)  
             string_array[i][j] = (
                 string_array[i][j][:index_to_insert]
                 + "["
