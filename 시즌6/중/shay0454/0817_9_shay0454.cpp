@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int GCD(int a, int b) {						// 유클리드 호제법하면 유명한 최대공약수 함수
-	if (b == 0)return a;					// GCD : greatest common divisor
+	if (b == 0)return a;					// GCD : Greatest Common Divisor
 	else return GCD(b, a % b);
 }
 int main() {
