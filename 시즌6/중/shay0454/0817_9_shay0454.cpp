@@ -1,12 +1,12 @@
 #include<iostream>
 using namespace std;
-int GCD(int a, int b) {                              // 유클리드 호제법하면 유명한 최대공약수 함수
-	if (b == 0)return a;                               // GCD : greatest common divisor
+int GCD(int a, int b) {						// 유클리드 호제법하면 유명한 최대공약수 함수
+	if (b == 0)return a;					// GCD : greatest common divisor
 	else return GCD(b, a % b);
 }
 int main() {
-	int x, y; cin >> x >> y;                            // x,y 선언 및 입력
-	cout << x + y - ((x > y) ? GCD(x, y) : GCD(y, x));  // x와 y 크기 비교 후 계산
+	int x, y; cin >> x >> y;				// x,y 선언 및 입력
+	cout << x + y - ((x > y) ? GCD(x, y) : GCD(y, x));	// x와 y 크기 비교 후 계산
 	return 0;
 }
 // 설명문 (특 : 설명 못함)
