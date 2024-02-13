@@ -1,37 +1,51 @@
 #include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 
-int memo[41][2];
+int zero_count = 0;
+int one_count = 0;
+int pos = 0;
+int count[82] = { 0 };
 
-int fibonacci(int n, int flag) {
-    if (memo[n][flag] != -1) {
-        return memo[n][flag];
-    }
+int fibonacci(int n) {
 
     if (n == 0) {
-        return memo[n][flag] = (flag == 0) ? 1 : 0;
+        zero_count = zero_count + 1;
+        return 0;
     }
     else if (n == 1) {
-        return memo[n][flag] = (flag == 1) ? 1 : 0;
+        one_count = one_count + 1;
+        return 1;
     }
     else {
-        return memo[n][flag] = fibonacci(n - 1, flag) + fibonacci(n - 2, flag);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
 
 int main() {
-    for (int i = 0; i < 41; i++) {
-        memo[i][0] = memo[i][1] = -1;
+
+    int i, a;
+    int T, N = 0;
+    scanf_s("%d", &T);
+
+    for (i = 0; i < T; i++) {
+        scanf_s("%d", &N);
+
+        if (N >= 0 && N <= 40) {
+            fibonacci(N);
+            count[pos] = zero_count;
+            count[pos + 1] = one_count;
+            pos = pos + 2;
+            zero_count = 0;
+            one_count = 0;
+        }
+        else {
+            printf("no\n");
+        }
+
     }
 
-    int T;
-    scanf("%d", &T);
-
-    while (T--) {
-        int N;
-        scanf("%d", &N);
-
-        printf("%d %d\n", fibonacci(N, 0), fibonacci(N, 1));
+    for (a = 0; a < pos; a+=2) {
+        printf("%d %d\n", count[a], count[a+1]);
     }
 
-    return 0;
 }
