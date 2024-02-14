@@ -4,5 +4,5 @@ def is_palindrome(word):
     else:
         return 0
     
-word = input("알파벳 소문자로 이루어진 단어를 입력해주세요: ")
+word = input()
 print(is_palindrome(word))
