@@ -1,22 +1,28 @@
-import sys
-from collections import Counter
+import sys  
+input = sys.stdin.readline  
 
-def backTracking(pre, l):
-    answer = 0
-    
-    if l == len(s):
-        return 1
+def dfs(pre_word, picked):  
 
-    for k in cnt.keys():
-        if k == pre or cnt[k] == 0:
-            continue
+    if picked == len(S):  
+        return 1  
+    answer = 0  
+    for key in counter.keys():  
+        if pre_word == key:  
+            continue  
+        if counter[key] == 0:  
+            continue  
+        counter[key] -= 1  
+        answer += dfs(key, picked+1)  
+        counter[key] += 1  
+    return answer  
 
-        cnt[k] -= 1
-        answer += backTracking(k, l + 1)
-        cnt[k] += 1
+S = list(input().strip())  
+counter = dict()  
+for s in S:  
+    if s in counter:  
+        counter[s] += 1  
+    else:  
+        counter[s] = 1  
 
-    return answer
-
-s = list(map(str, sys.stdin.readline().strip()))
-cnt = Counter(s)
-print(backTracking('', 0))
+answer = dfs('', 0)  
+print(answer)
