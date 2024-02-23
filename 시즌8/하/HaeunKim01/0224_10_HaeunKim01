@@ -1,0 +1,28 @@
+
+def bigdata_or_sercurity(N, student_list):
+    answer = "bigdata? security!"
+    idx = 0
+    
+    security, bigdata = 0, 0
+    
+    for _ in range(N):
+        if student_list[idx] == "s":
+            security += 1
+            idx += len("security")
+        elif student_list[idx] == "b":
+            bigdata += 1
+            idx += len("bigdata")
+            
+    if security > bigdata:
+        answer = "security!"
+    elif security < bigdata:
+        answer = "bigdata?"
+    
+    return answer
+
+
+if __name__ == "__main__":
+    N = int(input())
+    student_list = input()
+    
+    print(bigdata_or_sercurity(N=N, student_list=student_list))
