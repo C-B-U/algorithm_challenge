@@ -1,0 +1,28 @@
+import sys
+input = sys.stdin.readline
+from heapq import heappush,heappop
+
+def findparent(x):
+  if parent[x] == x:
+    return x
+  parent[x] = findparent(parent[x])
+  return parent[x]
+
+V,E = map(int,input().split())
+
+hq = []
+for i in range(E):
+  x1,x2,w = map(int,input().split())
+  heappush(hq,(w,x1,x2))
+
+parent = {i:i for i in range(1,V+1)}
+
+result = 0
+while hq:
+  w,x1,x2 = heappop(hq)
+  if findparent(x1) == findparent(x2):
+    continue
+  parent[findparent(x1)] = findparent(x2)
+  result += w
+
+print(result)
