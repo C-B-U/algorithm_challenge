@@ -24,7 +24,7 @@ def main():
     high, low = max(firework_pile), min(firework_pile)
 
     # 두 더미의 높이 차 구하기
-    height_difference = abs(high - low)
+    height_difference = high - low
 
     # 두 더미의 높이차가 총 터칠 수 있는 폭죽 수보다 큰 경우 높은 더미에서 총 터칠 수 있는 폭죽 수 만큼 낮추기
     if height_difference >= available_fireworks_count:
