@@ -20,14 +20,14 @@ def main():
     # 총 터트릴 수 있는 폭죽 수 구하기
     available_fireworks_count = firework_pile_count - 2
 
-    # 첫 더미와 마지막 더미를 높인 더미와 낮은 더미로 구분하기
+    # 첫 더미와 마지막 더미를 높은 더미와 낮은 더미로 구분하기
     if firework_pile[0] >= firework_pile[1]: high, low = firework_pile[0], firework_pile[1]
     else: high, low = firework_pile[1], firework_pile[0]
 
     # 두 더미의 높이 차 구하기
     height_difference = abs(high - low)
 
-    # 두 더미의 높이차가 총 터칠 수 있는 폭죽 수보다 큰 경우 높은 더미에서 총 터칠 수 있는 폭죽 수 만큼 낮추기
+    # 두 더미의 높이차가 총 터칠 수 있는 폭죽 수보다 큰 경우 높은 더미에서 총 터칠 수 있는 폭죽 수 만큼 낮춘 값을 출력하기
     if height_difference >= available_fireworks_count:
         return high - available_fireworks_count
     
