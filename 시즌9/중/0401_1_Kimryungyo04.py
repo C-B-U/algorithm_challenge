@@ -1,13 +1,13 @@
 # [ 알고리즘 ]
 
-# N-2번 반복하므로 결과적으로 첫 폭죽 더미와 마지막 폭죽 더미만 남는다.
+# 총 N-2 번 반복하므로 결과적으로 첫 폭죽 더미와 마지막 폭죽 더미만 남는다.
 # 즉, 첫 폭죽 더미와 마지막 폭죽 더미의 값만 최소화하면 된다.
-# 매 반복마다 두 폭죽 더미 중 높이가 더 높은 폭죽 더미의 옆에 있는 폭죽 더미를 터트리면 된다.
+# 반복마다 두 폭죽 더미 중 높이가 더 높은 폭죽 더미의 옆에 있는 폭죽 더미를 터트리면 된다.
 
 # ->
 
-# 1. 양 끝 폭죽 더미의 높이가 다른 경우 같아질 때 까지 높이가 높은쪽 옆에 있는 폭죽을 터트린다
-# 2. 폭죽의 높이가 같아졌으면 양쪽 번갈아가면서 옆에 있는 폭죽을 터트린다
+# 1. 양 끝 폭죽 더미의 높이가 다른 경우 같아질 때까지 높이가 높은 쪽 옆에 있는 폭죽을 터트린다.
+# 2. 폭죽의 높이가 같아졌으면 양쪽 번갈아 가면서 옆에 있는 폭죽을 터트린다.
 
 def main():
     # 폭죽 더미 수 입력
@@ -26,7 +26,7 @@ def main():
     # 두 더미의 높이 차 구하기
     height_difference = high - low
 
-    # 두 더미의 높이차가 총 터칠 수 있는 폭죽 수보다 큰 경우 높은 더미에서 총 터칠 수 있는 폭죽 수 만큼 낮추기
+    # 두 더미의 높이차가 총 터칠 수 있는 폭죽 수보다 큰 경우 높은 더미에서 총 터칠 수 있는 폭죽 수만큼 낮추기
     if height_difference >= available_fireworks_count:
         return high - available_fireworks_count
     
@@ -36,7 +36,7 @@ def main():
         available_fireworks_count -= height_difference
         firework_pile_count -= height_difference
 
-        # 폭죽이 2개밖에 안 남을때 까지 번갈아가며 폭죽 터트리기
+        # 폭죽이 2개밖에 안 남을 때 까지 번갈아 가며 폭죽 터트리기
         planned_fireworks = available_fireworks_count // 2
 
         high -= planned_fireworks
