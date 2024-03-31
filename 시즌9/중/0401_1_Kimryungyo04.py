@@ -20,7 +20,7 @@ def main():
     # 총 터트릴 수 있는 폭죽 수 구하기
     available_fireworks_count = firework_pile_count - 2
 
-    # 첫 더미와 마지막 더미를 높인 더미와 낮은 더미로 구분하기
+    # 첫 더미와 마지막 더미를 높은 더미와 낮은 더미로 구분하기
     high, low = max(firework_pile), min(firework_pile)
 
     # 두 더미의 높이 차 구하기
