@@ -26,11 +26,9 @@ while True:
     charging_stations.sort()
 
     arrival_possible = "POSSIBLE"
-    location = 0
-    for station in charging_stations:
-        if station - location > 200: 
+    for i in range(len(charging_stations) - 1):
+        if charging_stations[i + 1] - charging_stations[i] > 200: 
             arrival_possible = "IMPOSSIBLE"
             break
-        else: location = station
 
     print(arrival_possible)
