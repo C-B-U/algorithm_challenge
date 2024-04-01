@@ -25,7 +25,7 @@ def main(firework_pile_count: int = None, firework_list: str = None) -> int:
     # 폭죽 더미 수 입력
     if firework_pile_count == None: firework_pile_count = int(input())
 
-    # 폭죽 더미들 입력 및 첫 더미와 마지막 더미 구하기 및 메모리 최적화
+    # 폭죽 더미들 입력 및 첫 더미와 마지막 더미 구하기 + 메모리 최적화
     if firework_list == None: firework_list = input()
     firework_pile = int(firework_list.split(" ", 1)[0]), int(firework_list.rsplit(" ", 1)[1])
     del firework_list
