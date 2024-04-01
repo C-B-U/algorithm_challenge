@@ -13,22 +13,36 @@
     # 더슨 크릭 --------- 1422 Miles --------->  델타 정션  --------- 1422 Miles ---------> 더슨 크릭
     # ARR -----------------------------------> DES ARR -----------------------------------> DES
 
-highway_length = 1422 * 2
-while True:
-    charging_station_count = int(input())
-    if charging_station_count == 0: break
+def main():
+    """씨부엉 난이도 중 2일차 알고리즘 함수"""
 
-    charging_stations = []
-    for i in range(charging_station_count): 
-        location = int(input())
-        charging_stations.append(location)
-        charging_stations.append(highway_length - location)
-    charging_stations.sort()
+    # 가상 고속도로 길이 설정
+    highway_length = 1422 * 2
 
-    arrival_possible = "POSSIBLE"
-    for i in range(len(charging_stations) - 1):
-        if charging_stations[i + 1] - charging_stations[i] > 200: 
-            arrival_possible = "IMPOSSIBLE"
-            break
+    while True:
 
-    print(arrival_possible)
+        # 충전소 개수 입력
+        charging_station_count = int(input())
+
+        # 충전소의 개수가 0이 입력된 경우 반복 종료
+        if charging_station_count == 0: break
+
+        # 충전소 위치 입력
+        charging_stations = []
+        for i in range(charging_station_count): 
+            location = int(input())
+            charging_stations.append(location)
+            charging_stations.append(highway_length - location)
+        charging_stations.sort()
+
+        # 충전소 사이의 거리가 200 이상인 경우가 있으면 결과를 IMPOSSIBLE으로 지정, 없으면 POSSIBLE으로 지정
+        arrival_possible = "POSSIBLE"
+        for i in range(len(charging_stations) - 1):
+            if charging_stations[i + 1] - charging_stations[i] > 200: 
+                arrival_possible = "IMPOSSIBLE"
+                break
+
+        # 결과 출력
+        print(arrival_possible)
+
+main()
