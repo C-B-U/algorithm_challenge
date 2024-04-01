@@ -39,14 +39,13 @@ def main(firework_pile_count = None, firework_list = None):
         # 두 폭죽의 높이가 같으니 연산량을 줄이기 위해 하나의 변수로 통합
         firework = high
 
-        # 폭죽이 2개밖에 안 남을 때 까지 번갈아 가며 폭죽 터트리기
+        # 폭죽이 2개 또는 3개 밖에 안 남을 때 까지 번갈아 가며 폭죽 터트리기
         planned_fireworks = available_fireworks_count // 2
         firework -= planned_fireworks
         available_fireworks_count -= planned_fireworks * 2
 
-        # 남은 터칠 수 있는 폭죽 수에 따라 알맞은 값 반환
-        if available_fireworks_count == 2: return firework - 2
+        # 남은 터칠 수 있는 폭죽 수에 따라 알맞은 값 반환 (1 또는 0)
         if available_fireworks_count == 1: return firework - 1
-        elif available_fireworks_count == 0: return firework
+        else: return firework
 
 print(main())
