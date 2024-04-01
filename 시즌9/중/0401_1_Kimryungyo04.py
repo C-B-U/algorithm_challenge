@@ -9,7 +9,17 @@
 # 1. 양 끝 폭죽 더미의 높이가 다른 경우 같아질 때까지 높이가 높은 쪽 옆에 있는 폭죽을 터트린다.
 # 2. 폭죽의 높이가 같아졌으면 양쪽 번갈아 가면서 옆에 있는 폭죽을 터트린다.
 
-def main(firework_pile_count = None, firework_list = None):
+def main(firework_pile_count: int = None, firework_list: str = None) -> int:
+    """씨부엉 난이도 중 1일차 알고리즘 함수
+
+    Args:
+        firework_pile_count (int, optional): 폭죽 더미의 개수
+        firework_list (str, optional): 폭죽 더미의 목록 (ex: "12 52 36 45")
+
+    Returns:
+        int: 남은 폭죽의 높이 중 높은 값의 최솟값
+    """
+
     # 폭죽 더미 수 입력
     if firework_pile_count == None: firework_pile_count = int(input())
 
@@ -44,7 +54,7 @@ def main(firework_pile_count = None, firework_list = None):
         firework -= planned_fireworks
         available_fireworks_count -= planned_fireworks * 2
 
-        # 남은 터칠 수 있는 폭죽 수에 따라 알맞은 값 반환 (1 또는 0)
+        # 남은 터칠 수 있는 폭죽 수(1 또는 0)에 따라 알맞은 값 반환
         if available_fireworks_count == 1: return firework - 1
         else: return firework
 
