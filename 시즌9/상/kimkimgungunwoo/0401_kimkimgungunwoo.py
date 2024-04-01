@@ -15,5 +15,7 @@ answer=0
 for i in range(1,m+1):
     for j in range(1,n+1):
         answer=max(field[i][j],answer)
+        
+        
 print(answer**2)
             
