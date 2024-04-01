@@ -13,6 +13,7 @@
     # 더슨 크릭 --------- 1422 Miles --------->  델타 정션  --------- 1422 Miles ---------> 더슨 크릭
     # ARR -----------------------------------> DES ARR -----------------------------------> DES
 
+
 def main():
     """씨부엉 난이도 중 2일차 알고리즘 함수"""
 
@@ -25,7 +26,7 @@ def main():
         charging_station_count = int(input())
 
         # 충전소의 개수가 0이 입력된 경우 루프 종료
-        if input() == 0: break
+        if charging_station_count == 0: break
 
         # 충전소 위치 입력
         charging_stations = []
