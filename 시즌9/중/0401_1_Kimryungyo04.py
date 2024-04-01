@@ -36,7 +36,7 @@ def main(firework_pile_count = None, firework_list = None):
         available_fireworks_count -= height_difference
         firework_pile_count -= height_difference
 
-        # 두 폭죽의 높이가 같으니 하나로 통합
+        # 두 폭죽의 높이가 같으니 연산량을 줄이기 위해 하나의 변수로 통합
         firework = high
 
         # 폭죽이 2개밖에 안 남을 때 까지 번갈아 가며 폭죽 터트리기
