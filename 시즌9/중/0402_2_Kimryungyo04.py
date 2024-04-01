@@ -24,8 +24,8 @@ def main():
         # 충전소 개수 입력
         charging_station_count = int(input())
 
-        # 충전소의 개수가 0이 입력된 경우 반복 종료
-        if charging_station_count == 0: break
+        # 충전소의 개수가 0이 입력된 경우 루프 종료
+        if input() == 0: break
 
         # 충전소 위치 입력
         charging_stations = []
@@ -35,7 +35,7 @@ def main():
             charging_stations.append(highway_length - location)
         charging_stations.sort()
 
-        # 충전소 사이의 거리가 200 이상인 경우가 있으면 결과를 IMPOSSIBLE으로 지정, 없으면 POSSIBLE으로 지정
+        # 충전소 사이의 거리가 200을 초과하는 경우가 있으면 결과를 IMPOSSIBLE으로 지정, 없으면 POSSIBLE으로 지정
         arrival_possible = "POSSIBLE"
         for i in range(len(charging_stations) - 1):
             if charging_stations[i + 1] - charging_stations[i] > 200: 
