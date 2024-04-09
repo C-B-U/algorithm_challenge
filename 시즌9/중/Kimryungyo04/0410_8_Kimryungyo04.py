@@ -1,8 +1,3 @@
-with open("input.md") as f: inputs = f.read()
-inputs = list(inputs.strip().split("\n"))
-def input(): return inputs.pop(0)
-
-
 directions = ((1, 0), (-1, 0), (0, 1), (0, -1))
 paths = []
 for d1 in directions :
