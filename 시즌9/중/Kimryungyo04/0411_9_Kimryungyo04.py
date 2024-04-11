@@ -6,9 +6,13 @@
 # 각 횟수 사이의 차이 : 0 0 1 1 2 2 3  3  4  4  5  5
 
 def main():
-    n = int(input())
-    result = 0
-    for i in range(n): result += i // 2
-    print(result)
+    """씨부엉 난이도 중 9일차 알고리즘 함수"""
+
+    n = int(input()) # 정보 입력
+    result = 0       # 자리를 바꾼 횟수 정의
+
+    for i in range(n): result += i // 2 # 규칙에 따라 횟수 추가
+
+    print(result)    # 결과 출력
 
 main()
