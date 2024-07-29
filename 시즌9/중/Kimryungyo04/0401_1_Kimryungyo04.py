@@ -11,7 +11,7 @@
 
 # 시간 제한 : 1초, 반복문 사용 X
 # 평균 소요 시간 (입력 길이 상관 없이) : 40ms ~ 60ms (컴파일 후 1ms ~ 0ms)
-
+# 시간 복잡도 : O(1)
 
 def main(firework_pile_count: int = None, firework_list: str = None) -> int:
     """씨부엉 난이도 중 1일차 알고리즘 함수
