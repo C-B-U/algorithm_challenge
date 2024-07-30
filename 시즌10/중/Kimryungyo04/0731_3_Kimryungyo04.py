@@ -5,18 +5,9 @@ if n < 100: print(n); quit()
 count = 99
 
 for num in range(100, n + 1):
-    
-    str_num = str(num)
-    common_diff = int(str_num[1]) - int(str_num[0])
+    nums = list(map(int, str(num)))
 
-    count += 1
-    before = int(str_num[0]) - common_diff
-
-    for sub_num in str_num:
-        sub_num = int(sub_num)
-        if sub_num != (before + common_diff):
-            count -= 1
-            break
-        before = sub_num
+    if nums[0] - nums[1] == nums[1] - nums[2]:
+        count += 1
 
 print(count)
