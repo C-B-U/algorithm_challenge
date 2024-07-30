@@ -1,4 +1,5 @@
 # 브루트포스로 체크
+
 n = int(input())
 if n < 100: print(n); quit()
 count = 99
