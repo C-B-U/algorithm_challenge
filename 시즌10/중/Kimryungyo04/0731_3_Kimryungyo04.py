@@ -1,10 +1,10 @@
 # 브루트포스로 체크
 
 n = int(input())
-if n < 10: print(n); quit()
-count = 9
+if n < 100: print(n); quit()
+count = 99
 
-for num in range(10, n + 1):
+for num in range(100, n + 1):
     
     str_num = str(num)
     common_diff = int(str_num[1]) - int(str_num[0])
