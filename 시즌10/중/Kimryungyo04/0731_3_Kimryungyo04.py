@@ -15,7 +15,6 @@ for num in range(10, n + 1):
     for sub_num in str_num:
         sub_num = int(sub_num)
         if sub_num != (before + common_diff):
-            is_arith = False
             count -= 1
             break
         before = sub_num
