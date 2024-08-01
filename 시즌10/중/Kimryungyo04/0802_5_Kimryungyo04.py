@@ -2,7 +2,6 @@
 
 from math import ceil
 W, H, N = map(int, input().split())
-diff = H / N
 
 mid = ceil(N / 2) - 1
 sum_a = mid / 2 * (2 * diff + (mid - 1) * diff)
