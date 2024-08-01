@@ -7,10 +7,10 @@ constexpr int INF = 1'000'000'000;
 
 int solution(const pair<int, int>& ep, const vector<pair<int, int>>& v, int sp, int hp, int dp, int d, int mask)
 {
-	int ret = INF;
 	int dist_end = abs(ep.first - v[sp].first) + abs(ep.second - v[sp].second);
 	if (hp + dp - dist_end >= 0)
-		ret = dist_end;
+		return dist_end;
+	int ret = INF;
 	for (int i = 1; i < v.size(); ++i)
 	{
 		if (mask >> i & 1)
