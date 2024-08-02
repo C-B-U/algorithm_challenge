@@ -1,5 +1,5 @@
 # 등차수열의 합 공식 활용
-# y = (H / W)x (0 < x < W) -> N / 2 보다 왼쪽에 있는 값은 빼고 오른쪽에 있는 값은 더한 후 x2 를 해준다.
+# An = H + (n - 1) * (H / N) -> N / 2 보다 왼쪽에 있는 값은 빼고 오른쪽에 있는 값은 더한 후 x2 를 해준다.
 
 from math import ceil
 W, H, N = map(int, input().split())
