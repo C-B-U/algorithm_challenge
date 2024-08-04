@@ -16,11 +16,8 @@ int main()
 	memo[0] = 0;
 	for (int i = 0; i < n; ++i)
 	{
-		for (int vp : v)
-		{
-			if (i + vp <= n)
-				memo[i + vp] = min(memo[i + vp], memo[i] + 1);
-		}
+		for (auto j = v.begin(); j != v.end() && i + *j <= n; ++j)
+			memo[i + *j] = min(memo[i + *j], memo[i] + 1);
 	}
 	cout << memo[n];
 }
