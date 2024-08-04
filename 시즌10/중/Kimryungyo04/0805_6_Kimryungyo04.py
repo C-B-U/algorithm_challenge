@@ -1,3 +1,8 @@
+# 명령의 수가 많으므로 빠른 입력을 사용한다
+
+from sys import stdin
+input = lambda: stdin.readline().rstrip()
+
 stack = []
 N = int(input())
 
