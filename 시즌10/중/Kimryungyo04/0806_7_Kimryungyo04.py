@@ -11,7 +11,6 @@ for class_num in map(int, input().split()):
 for class_num in map(int, input().split()):
     if class_list[class_num] == 0:
         absent_students += 1
-
     else:
         class_list[class_num] -= 1
 
