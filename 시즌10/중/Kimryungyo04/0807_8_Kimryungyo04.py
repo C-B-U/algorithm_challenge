@@ -5,7 +5,7 @@ n = int(input())
 seniors = {}
 for _ in range(n):
     name, week, day, pay = input().split()
-    seniors[name] = ( (int(week) * 7 + int(day)), int(pay))
+    seniors[name] = ( (int(week) * 7 + int(day)), int(pay) )
 
 schedules = set()
 for _ in range(n):
@@ -16,10 +16,11 @@ for _ in range(n):
 
 schedules = sorted(schedules)
 if not schedules: print(0); quit()
-day = schedules[0] - 1
 
+day = schedules[0] - 1
 max_count = 0
 count = 0
+
 for event in schedules:
     if event == day + 1:
         count += 1
