@@ -1,4 +1,5 @@
 # N개가 참이라는 말이 N개 존재하면 참이다.
+# or 참의 개수가 0~N개일 때를 모두 탐색해도 된다.
 
 from collections import Counter
 n, *nums = map(int, open(0).read().split())
