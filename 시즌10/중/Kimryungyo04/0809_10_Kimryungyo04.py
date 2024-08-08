@@ -1,4 +1,4 @@
-# N개의 말이 참이라는 말이 N개 존재하면 참이다.
+# N개가 참이라는 말이 N개 존재하면 참이다.
 
 from collections import Counter
 n, *nums = map(int, open(0).read().split())
