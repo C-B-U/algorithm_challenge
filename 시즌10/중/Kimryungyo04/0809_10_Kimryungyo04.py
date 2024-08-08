@@ -1,17 +1,13 @@
-# 맞는 말의 개수가 0 ~ n개일 때를 모두 확인한다
+# N개의 말이 참이라는 말이 N개 존재하면 참이다.
 
+from collections import Counter
 n, *nums = map(int, open(0).read().split())
 
-result = -1
-for answer in range(n + 1):
-    count = 0
+counts = dict(Counter(nums))
+result = 0 if counts.get(0, 0) == 0 else -1
 
-    for num in nums:
-        if num == answer:
-            count += 1
-
-    if count == answer:
-        if count > result:
-            result = count
+for answer, count in counts.items():
+    if answer == count:
+        result = max(result, count)
 
 print(result)
