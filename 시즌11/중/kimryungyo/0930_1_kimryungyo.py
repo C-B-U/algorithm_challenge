@@ -1,4 +1,5 @@
 # B가 일반 과목 총점이 아니라 전공 합친 점수였구나.. 왜 안풀리나 했다
+# 풀이 : 전공 과목이 존재하는 경우 전공 과목 먼저 들으면 된다
 
 N, majors, total = map(int, input().split())
 remain_semester = 8 - N
