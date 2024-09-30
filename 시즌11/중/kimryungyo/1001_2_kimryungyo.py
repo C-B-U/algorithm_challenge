@@ -1,4 +1,5 @@
 # 인접한 부분들을 확인한 후 모양을 결정하면 된다
+# 입력의 최대 길이는 900줄이므로 빠른 입력이 필요
 
 from sys import stdin
 input = lambda: stdin.readline().rstrip()
