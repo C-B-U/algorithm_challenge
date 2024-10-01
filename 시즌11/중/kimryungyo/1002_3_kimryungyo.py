@@ -12,15 +12,11 @@ while True:
     for i in range(idx, idx + A):
         pots[i] += B
 
-    died = False
     for i in range(N):
         pots[i] -= 1
         if pots[i] == 0:
-            died = True
-
-    if died:
-        print(day)
-        quit()
+            print(day)
+            quit()
 
     idx += A
     if idx == N:
