@@ -1,5 +1,56 @@
 
 // 백준 알고리즘 1065번 '한수' 문제
+
+/*
+#include <stdio.h>
+
+
+int countRepaints(int number) {
+    int count = 0;
+    
+    if (number < 100) {
+        count = number;
+    }
+    else {
+        int hundreds = number / 100;
+        int tens = (number / 10) % 10;
+        int units = number % 10;
+
+        int min = 0 - hundreds/2;
+        int max = 4 - hundreds/2;
+
+        count = 99 + (hundreds - 1) * 4;
+        
+        if(hundreds < 3) {
+
+        }
+        else if(2<hundreds<5) {
+
+        }
+        else if(4<hundreds<7) {
+
+        }
+        else if(6<hundreds<9) {
+
+        }
+        else {
+
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+
+
+    return 0;
+}
+*/
+
 #include <stdio.h>
 
 // 주어진 수가 한수인지 확인하는 함수

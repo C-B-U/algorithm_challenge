@@ -1,3 +1,4 @@
+// 백준 알고리즘 1018번 문제
 #include <stdio.h>
 
 #define MAX 50
