@@ -1,3 +1,5 @@
+// 백준 알고리즘 31869번 '선배님 밥 사주세요!' 문제
+
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -45,7 +47,7 @@ void input() {
         SENPAI senpai = { 0 };
         strcpy(senpai.Name, name);
         senpai.Price = P;
-        Senpais[i] = (SenpaiEntry){ dayOfYear, senpai };
+        Senpais[i] = (SenpaiEntry) { dayOfYear, senpai };
 
         // 저장: 이름 목록과 인덱스
         bool found = false;
@@ -82,7 +84,7 @@ void input() {
 
 void settings() {
     memset(Visited, false, sizeof(Visited));
-    
+
     for (int i = 0; i < N; i++) {
         int Week = Senpais[i].dayOfYear / 7;
         int Day = Senpais[i].dayOfYear % 7;
