@@ -16,7 +16,7 @@ for key in range(length):
     decryption = { char: asciis[idx - key] for char, idx in ascii_idxs.items() }
 
     encrypted = ENCRYPTED_STRING
-    decrypted = "".join([ decryption[char] for char in encrypted ])
+    decrypted = "".join( decryption[char] for char in encrypted )
 
     for word in WORDS:
         if word in decrypted:
