@@ -1,4 +1,5 @@
 # 역시 파이썬
+
 from itertools import permutations
 N, M = map(int, input().split())
 
