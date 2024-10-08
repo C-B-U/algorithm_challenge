@@ -3,8 +3,8 @@
 from itertools import permutations
 N, M = map(int, input().split())
 
-for combination in permutations(range(1, N + 1), M):
-    print(" ".join(map(str, combination)))
+for permutation in permutations(range(1, N + 1), M):
+    print(" ".join(map(str, permutation)))
 
 # 정석 풀이 : 재귀 백트래킹
 
@@ -13,7 +13,7 @@ visited = [ False ] * (N + 1)
 
 def dfs(sequence: list = []):
     if len(sequence) == M:
-        print(*sequence)
+        print(" ".join(map(str, sequence)))
         return None
 
     for num in range(1, N + 1):
