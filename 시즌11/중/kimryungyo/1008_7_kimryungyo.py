@@ -6,9 +6,6 @@ N, M = map(int, input().split())
 for combination in permutations(range(1, N + 1), M):
     print(" ".join(map(str, combination)))
 
-
-
-
 # 정석 풀이 : 재귀 백트래킹
 
 N, M = map(int, input().split())
@@ -26,5 +23,5 @@ def dfs(sequence: list = []):
             dfs(sequence)
             sequence.pop()
             visited[num] = False
-
+            
 dfs()
