@@ -3,7 +3,6 @@
 #       사이클이 발생하는 경우 주의
 
 N = int(input())
-
 graph = [ -1 ] * 128
 for _ in range(N):
     a, b = map(ord, input().split(" is "))
