@@ -12,8 +12,6 @@ for key in range(26):
         print(decrypted)
         quit()
 
-
-
 # 하는김에 숏코딩
 E,N,*W=open(0).read().split()
 for k in range(26):
