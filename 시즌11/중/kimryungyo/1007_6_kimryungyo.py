@@ -12,7 +12,7 @@ for key in range(26):
         print(decrypted)
         quit()
 
-# 하는김에 숏코딩
+# 하는김에 숏코딩도
 E,N,*W=open(0).read().split()
 for k in range(26):
- if any(w in(d:="".join(chr((97+((ord(c)-97)+k)%26))for c in E))for w in W):print(d);quit()
+ if any(w in(d:=''.join(chr((ord(c)+k-97)%26+97)for c in E))for w in W):print(d);quit()
