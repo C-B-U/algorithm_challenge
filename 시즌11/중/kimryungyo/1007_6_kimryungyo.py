@@ -10,9 +10,9 @@ for key in range(26):
 
     if any(word in decrypted for word in WORDS):
         print(decrypted)
-        quit()
+        break
 
 # 하는김에 숏코딩도
 E,N,*W=open(0).read().split()
 for k in range(26):
- if any(w in(d:=''.join(chr((ord(c)+k-97)%26+97)for c in E))for w in W):print(d);quit()
+ if any(w in(d:=''.join(chr((ord(c)+k-97)%26+97)for c in E))for w in W):print(d);break
