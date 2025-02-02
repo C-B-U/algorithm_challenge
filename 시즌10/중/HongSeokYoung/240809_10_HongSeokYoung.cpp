@@ -1,4 +1,35 @@
 // 백준 알고리즘 1813번 '논리학 교수' 문제
+
+/*
+#include <stdio.h>
+
+int main() {
+    int s[51] = {0};
+    int n,t;
+    int result = -1;
+
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &t);
+        if (t>0 && t<n) {
+            result = 0;
+        }
+        s[t] = s[t]+1;
+    }
+
+    for (int a = 1; a < n; a++) {
+        if(s[a] == a) {
+            result = a;
+        }
+    }
+
+    printf("%d",result);
+
+    return 0;
+}
+*/
+
 #include <stdio.h>
 
 int main() {

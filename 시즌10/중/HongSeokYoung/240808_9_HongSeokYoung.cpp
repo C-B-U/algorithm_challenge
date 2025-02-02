@@ -1,3 +1,5 @@
+// 백준 알고리즘 16112번 '5차 전직' 문제
+
 #include <stdio.h>
 #include <stdlib.h>
 
