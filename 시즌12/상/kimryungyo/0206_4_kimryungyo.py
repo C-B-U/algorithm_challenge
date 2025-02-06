@@ -15,7 +15,7 @@
 #                  그러나 비트마스킹을 이용하면 1비트당 한 단어씩, 최악의 경우에도 하나의 목록을 2바이트로(16bit) 저장할 수 있다. (800분의 1 메모리 사용)
 #
 #    + 비트마스크 결과를 해시맵을 사용해 저장할 수도 있겠지만 파이썬의 경우 해시 연산이 상당히 무겁기 때문에 리스트를 이용했다.
-#      단어의 수는 최대 16개로, 경우의 수 65536이므로 65536 길이의 리스트를 활용하면 된다.
+#      단어의 수는 최대 16개로, 경우의 수가 65536이므로 65536 길이의 리스트를 활용하면 된다.
 #
 # 0. 문제 풀다 알았는데 문제에 N = 1인 경우의 데이터가 없는 거 같다..
 #
@@ -38,19 +38,20 @@ for idx in range(N):
     info = (w_start, w_end, len(word), idx)
     WORDS.append(info)
 
-# 만든 단어의 정보를 기록하는 리스트 
-# dp[사용한 단어 정보][만든 문자열의 마지막 문자 번호] 는 만든 문자열의 길이를 나타낸다.
-# 길이가 0인 경우는 그 문자열을 못 만들었다는 의미
-dp = [ [ 0, 0, 0, 0, 0 ] for _ in range(65536) ]
+# 만든 단어들을 기록하는 리스트 
+# dp[사용한 단어 정보][만든 문자열의 마지막 문자 번호] 는 해당 정보들로 문자열을 만들었는지를 나타낸다.
+# 값이 False 경우는 그 문자열을 못 만들었다는 의미
+created = [ [ False ] * 5 for _ in range(65536) ]
 
-# 큐에 초기값들 추가
+# 큐에 하나의 단어만 사용하는 초기값들을 추가
 queue = []
 initial = int('1' * N, 2)
 for start, end, leng, idx in WORDS:
     used = initial & ~(1 << idx)
     queue.append( (used, leng, end) )
+    created[used][end] = True
 
-# 새 문자열을 만들 수 있을 때 까지 문자열을 만든다
+# 기존 문자에 단어를 이어붙여 새 문자열을 만들 수 있을 때 까지 문자열을 만든다
 max_len = 0
 while queue:
     used, leng, end = queue.pop()
@@ -64,8 +65,8 @@ while queue:
             new_used = used & ~(1 << w_idx)
             new_len = leng + w_len
 
-            if w_start == end and dp[new_used][w_end] == 0:
-                dp[new_used][w_end] = new_len
+            if w_start == end and not created[new_used][w_end]:
+                created[new_used][w_end] = True
                 queue.append( (new_used, new_len, w_end) )
 
 # 만든 문자열 중 최대 길이 출력
