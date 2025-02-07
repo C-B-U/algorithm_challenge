@@ -71,12 +71,13 @@ sequence = []
 minimum = 1
 remains = M
 slots = N
+remain_order = K
 
 for i in range(N):
     for candidate in range(minimum, remains+1):
         count = get_candidates(slots-1, remains-candidate, candidate)
-        if K > count:
-            K -= count
+        if remain_order > count:
+            remain_order -= count
         else:
             sequence.append(candidate)
             remains -= candidate
