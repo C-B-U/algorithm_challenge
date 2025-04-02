@@ -8,13 +8,13 @@ using namespace std;
 int main()
 {
     int n, max = 0;
-    long xi, yi, ox, oy;
+    long ox, oy, xi, yi;
 
     cin >> ox >> oy >> n;
 
     map<pair<long, long>, int> slope[2];
 
-    for (int i = 0; i < n; i++)
+    while (n--)
     {
         cin >> xi >> yi;
         if (xi == ox || yi >= oy) continue;
