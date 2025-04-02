@@ -27,7 +27,7 @@ int solution(int h, int x, int y, int c)
 {
 	if (x == h)
 		return -100;
-	if (memo[x][c] < 0xF0F0F0F0)
+	if (memo[x][c] < 0x11111111)
 		return memo[x][c];
 	if (room_range[x].second == 0)
 		return memo[x][c] = solution(h, x + 1, y, c) + 100;
@@ -43,7 +43,7 @@ int main()
 
 	int n, h, w;
 	cin >> n >> h >> w;
-	memset(memo, 0xF0, sizeof(memo));
+	memset(memo, 0x11, sizeof(memo));
 	room_range[0] = make_pair(1, 1);
 	for (int i = 1; i < h; ++i)
 		room_range[i] = make_pair(w, 0);
