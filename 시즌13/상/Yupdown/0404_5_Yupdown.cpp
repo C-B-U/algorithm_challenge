@@ -3,7 +3,7 @@
 #define PRECISION(n) cout<<fixed,cout.precision(n)
 
 // 갈톤보드 내에서의 a번째 시작지점의 (x, y)를 구하여 도착지점의 범위를 구할 수 있다.
-// y = sqrt(a * 8 - 1) - 1 / 2
+// y = sqrt((a - 1) * 8 + 1) - 1 / 2
 // x = a - (y - 1) * y / 2 - 1
 
 // 구한 범위만큼 도착지점에 b를 범위의 크기로 나누어 더해준다.
@@ -27,7 +27,7 @@ int main()
 	{
 		int64 a, b;
 		cin >> a >> b;
-		int64 hp = static_cast<int64>((sqrt(a * 8 - 1) - 1) / 2) + 1;
+		int64 hp = static_cast<int64>((sqrt((a - 1) * 8 + 1) - 1) / 2) + 1;
 		int64 s = a - (hp - 1) * hp / 2 - 1;
 		int64 e = h - hp * (hp + 1) / 2 + a;
 		int64 c = e - s + 1;
