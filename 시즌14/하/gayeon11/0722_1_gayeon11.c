@@ -4,13 +4,13 @@
 #include <stdio.h>
 
 int main() {
-    int A, B, C; // ±¸¸ÅÇÑ ÁÖ½º ¾ç -> A¿À·»Áö B»ç°ú CÆÄÀÎ¾ÖÇÃ
-    int I, J, K; // Ä¬Å×ÀÏ ºñÀ²
+    int A, B, C; // êµ¬ë§¤í•œ ì£¼ìŠ¤ ì–‘ -> Aì˜¤ë Œì§€ Bì‚¬ê³¼ CíŒŒì¸ì• í”Œ
+    int I, J, K; // ì¹µí…Œì¼ ë¹„ìœ¨
 
     scanf("%d %d %d", &A, &B, &C);
     scanf("%d %d %d", &I, &J, &K);
 
-    // °¢°¢ÀÇ ÁÖ½º·Î ¸¸µé ¼ö ÀÖ´Â Ä¬Å×ÀÏ È½¼ö
+    // ê°ê°ì˜ ì£¼ìŠ¤ë¡œ ë§Œë“¤ ìˆ˜ ìˆëŠ” ì¹µí…Œì¼ íšŸìˆ˜
     double max_orange = (double)A / I;
     double max_apple = (double)B / J;
     double max_pineapple = (double)C / K;
@@ -20,7 +20,7 @@ int main() {
     if (max_apple < min_cocktail) min_cocktail = max_apple;
     if (max_pineapple < min_cocktail) min_cocktail = max_pineapple;
 
-    // ³²Àº ÁÖ½º ¾ç
+    // ë‚¨ì€ ì£¼ìŠ¤ ì–‘
     double remain_orange = A - I * min_cocktail;
     double remain_apple = B - J * min_cocktail;
     double remain_pineapple = C - K * min_cocktail;
