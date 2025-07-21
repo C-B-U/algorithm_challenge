@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+float maxAmount(float, float, float);
+
+int main() {
+
+	float ABC[3];
+	float ijk[3];
+	float divisor = 0;
+	float max_product = 0;
+	
+
+	scanf("%f %f %f", &ABC[0], &ABC[1], &ABC[2]);
+	scanf("%f %f %f", &ijk[0], &ijk[1], &ijk[2]);
+
+	max_product = ABC[0];
+	for (int i = 0; i <= 2;i++) {
+		max_product = maxAmount(max_product, ABC[i], ijk[i]);
+	}
+
+	for (int i = 0; i <= 2;i++) {
+
+		ABC[i] = ABC[i]-ijk[i]*max_product;
+
+		if (ABC[i] - (int)ABC[i] < 0.00001) {
+
+			printf("%d ", (int)ABC[i]);
+		}
+		else {
+
+			printf("%f ", ABC[i]);
+		}		
+	}	
+}
+
+float maxAmount(float a, float c, float d) {
+	if (a < c/d) {
+		return a;
+	}
+	else {
+		return c/d;
+	}
+}
