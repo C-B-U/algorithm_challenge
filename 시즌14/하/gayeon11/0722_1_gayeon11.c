@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-#include <stdio.h>
 
 int main() {
     int A, B, C; // 구매한 주스 양 -> A오렌지 B사과 C파인애플
