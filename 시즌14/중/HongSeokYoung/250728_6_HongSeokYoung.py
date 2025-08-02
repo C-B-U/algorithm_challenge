@@ -1,33 +1,37 @@
 # 백준 알고리즘 15723번 'n단 논법' https://www.acmicpc.net/problem/15723
-
 from collections import deque
 
 n = int(input())
-graph = {chr(i): [] for i in range(ord('a'), ord('z')+1)}
 
-# 관계 저장
+graph = {}
+for i in range(ord('a'), ord('z')+1):
+    graph[chr(i)] = []
+
 for _ in range(n):
     a, _, b = input().split()
     graph[a].append(b)
 
 m = int(input())
 
-def is_related(start, target):
-    visited = set()
-    queue = deque([start])
-    
-    while queue:
-        cur = queue.popleft()
-        if cur == target:
+def bfs(graph, start_v, final_v):
+    visited = {key: False for key in graph}
+    q = deque()
+    q.append(start_v)
+    visited[start_v] = True
+
+    while q:
+        cur_v = q.popleft()
+        if cur_v == final_v:
             return True
-        
-        for nxt in graph[cur]:
-            if nxt not in visited:
-                visited.add(nxt)
-                queue.append(nxt)
+        for next_v in graph[cur_v]:
+            if not visited[next_v]:
+                visited[next_v] = True
+                q.append(next_v)
     return False
 
-# 질의 처리
 for _ in range(m):
     a, _, b = input().split()
-    print("T" if is_related(a, b) else "F")
+    if bfs(graph, a, b):
+        print('T')
+    else:
+        print('F')
