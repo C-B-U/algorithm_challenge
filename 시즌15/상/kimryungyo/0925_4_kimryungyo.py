@@ -18,7 +18,7 @@ def dfs(now, before, min_height):
     for next in graph[now]:
         if next == before: continue
 
-        if now != K -1 and heights[next] >= min_height:
+        if heights[next] >= min_height:
             print(1)
             quit()
 
