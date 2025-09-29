@@ -4,7 +4,7 @@
 # 학교에서 출발해 한 장소씩 이동한다고 할 때, k개의 장소를 지났을 때 다음으로 갈 수 있는 후보 정점이 하나만 존재한다면, 
 # 최단 경로를 지나기 위해서는 그 정점을 무조건 지날 수밖에 없다.
 
-# 그러나 매번 후보 정점이 모두 2개 이상이라면, 각 층마다 다른 선택지가 존재하므로
+# 그러나 매번 후보 정점이 2개 이상이라면, 각 단계마다 다른 선택지가 존재하므로
 # 특정 정점 하나가 모든 최단 경로에 포함될 수 없고, 정답은 1이 된다.
 
 from collections import deque
@@ -49,8 +49,10 @@ for node in range(1, N + 1):
     if school_d[node] + home_d[node] == D:
         k = school_d[node]
 
-        if candis[k][0] is None: candis[k] = [ True, node ]
-        else: candis[k] = [ False, None ]
+        if candis[k][0] is None: 
+            candis[k] = [ True, node ]
+        else: 
+            candis[k] = [ False, None ]
 
 # 만약 정점을 k개 지났을 때 다음으로 갈 수 있는 정점이 유일한 경우가 있으면 해당 정점 출력 후 종료
 # 후보 정점이 유일한 경우가 없으면 무조건 지나는 정점이 없으므로 1 출력
