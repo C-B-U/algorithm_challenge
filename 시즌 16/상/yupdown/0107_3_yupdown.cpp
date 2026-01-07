@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+ï»¿#include <bits/stdc++.h>
 
 using namespace std;
 int memo[1024][2][3];
@@ -10,7 +10,7 @@ int main()
 	cin >> n;
 	memo[0][0][0] = 1;
 	for (int i = 1; i <= n; ++i) {
-		// Ãâ¼® case
+		// ì¶œì„ case
 		memo[i][0][0] = (
 			memo[i - 1][0][0] +
 			memo[i - 1][0][1] +
@@ -19,13 +19,13 @@ int main()
 			memo[i - 1][1][0] +
 			memo[i - 1][1][1] +
 			memo[i - 1][1][2]) % MOD;
-		// Áö°¢ case
+		// ì§€ê° case
 		memo[i][1][0] = (
 			memo[i][1][0] +
 			memo[i - 1][0][0] +
 			memo[i - 1][0][1] +
 			memo[i - 1][0][2]) % MOD;
-		// °á¼® case
+		// ê²°ì„ case
 		memo[i][0][2] = memo[i - 1][0][1];
 		memo[i][0][1] = memo[i - 1][0][0];
 		memo[i][1][2] = memo[i - 1][1][1];
