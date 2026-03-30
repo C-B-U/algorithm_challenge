@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // 입출력 속도 향상
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    long long n, m;
+    cin >> n >> m;
+
+    // 핵심 조건: n이 m보다 크거나 같으면 나머지는 무조건 0
+    if (n >= m) {
+        cout << 0 << "\n";
+    } else {
+        long long result = 1;
+        // n이 m보다 작을 때만 직접 계산 (최대 10^6번 반복)
+        for (long long i = 1; i <= n; i++) {
+            result = (result * i) % m;
+        }
+        cout << result << "\n";
+    }
+
+    return 0;
+}
