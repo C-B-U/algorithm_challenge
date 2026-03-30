@@ -3,14 +3,12 @@ using namespace std;
 
 typedef long long ll;
 
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    ll n, m;
+    ll n, m, t{1};
     cin >> n >> m;
-    ll t = 1;
 
     if (n >= m) {
         cout << 0 << '\n';
@@ -21,7 +19,6 @@ int main() {
         }
         cout << t << '\n';
     }
-
 
     return 0;
 }
