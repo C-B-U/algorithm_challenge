@@ -1,5 +1,0 @@
-N = int(input())
-if (N-2) % 2 == 1:
-    print("건구스")
-else:
-    print("건덕")
