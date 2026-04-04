@@ -17,4 +17,4 @@ for k in range(N):
     ans[original_idx] = k + 1
 
 print("YES")
-print(*ans)
+print(*ans)#
