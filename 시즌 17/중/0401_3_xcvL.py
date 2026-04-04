@@ -26,4 +26,4 @@ if N > 2:
     if act3 + act4 <= m:
         ans += 1
 
-print(ans)#
+print(ans)
