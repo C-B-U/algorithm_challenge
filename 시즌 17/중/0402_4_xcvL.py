@@ -36,4 +36,4 @@ def binary_search(target):
 for _ in range(M):
     power = int(input())
     idx = binary_search(power)
-    print(styles[idx])#
+    print(styles[idx])
