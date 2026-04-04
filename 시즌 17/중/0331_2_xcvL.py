@@ -6,4 +6,4 @@ for _ in range(T):
         input()
     Nlist.append(N - 1)
 for n in Nlist:
-    print(n)#
+    print(n)
