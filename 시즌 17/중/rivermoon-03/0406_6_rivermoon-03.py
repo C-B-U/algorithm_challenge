@@ -1,13 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-Q = int(input())
+q = int(input())
 
 # 처음 배열은 1, 2, 3, 4, ... 이므로 min = 1 step = 1
 current_min = 1
 step = 1
 
-for _ in range(Q):
+for _ in range(q):
     query = input().split()
     op = int(query[0])
     
