@@ -11,5 +11,3 @@ for i in range(n + 1):
         max_true = max(max_true, i)
 
 print(max_true)
-
-
