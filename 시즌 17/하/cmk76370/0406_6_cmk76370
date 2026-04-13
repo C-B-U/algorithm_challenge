@@ -1,0 +1,10 @@
+N = int(input())
+A = list(map(int, input().split()))
+
+result = -1
+
+for X in range(N + 1):
+    if A.count(X) == X:
+        result = X 
+
+print(result)
