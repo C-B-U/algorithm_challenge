@@ -1,0 +1,5 @@
+n, m = map(int, input().split())
+result = 1 if n < m else 0
+for i in range(1, n if n < m else 0):
+    result = (result * (i + 1)) % m
+print(result)

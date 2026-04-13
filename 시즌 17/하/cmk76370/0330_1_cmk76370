@@ -1,0 +1,24 @@
+S= list(input())
+final=[]
+if 'A' in S:
+    for i in S :
+        if i=='B'or i=='C' or i=='D' or i=='F':
+            final.append('A')
+        else:
+            final.append(i)
+elif 'A' not in S and 'B' in S:
+    for i in S :
+        if i=='C' or i=='D' or i=='F':
+            final.append('B')
+        else:
+            final.append(i)
+elif 'A' not in S and 'B' not in S and 'C' in S:
+    for i in S :
+        if i=='D' or i=='F':
+            final.append('C')
+        else:
+            final.append(i) 
+else:
+    final = ['A'] * len(S)
+
+print(''.join(final))
